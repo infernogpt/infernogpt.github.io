@@ -3,22 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>infernopluh</title>
-    <link rel="stylesheet" href="style.css">
+    <title>infernopluh repos</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Importing a cartoony font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+        /* Body styling */
+        body {
+            font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+            background: linear-gradient(120deg, #ff4500, #ff6347);
+            color: #fff;
+            text-align: center;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header styling */
+        header {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        /* Repository list styling */
+        #repo-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .repo-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .repo-card:hover {
+            transform: scale(1.05);
+        }
+
+        .repo-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .repo-card p {
+            margin-bottom: 10px;
+        }
+
+        .repo-card a {
+            color: #ffdab9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .repo-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer styling */
+        footer {
+            margin-top: auto;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>My Software And Mods</h1>
+        <h1>My GitHub Repos and Software</h1>
     </header>
     <main>
         <section id="repo-list">
-            <p>Loading repositories...</p>
+            <!-- Manually add your repositories here -->
+            <div class="repo-card">
+                <h2>Cheat Installer</h2>
+                <p>Gtag Cheat Installer</p>
+                <a href="https://github.com/infernopluh/GorillaCheatManager" target="_blank">View Repository</a>
+            </div>
+            <div class="repo-card">
+                <h2>HWID Spoofer</h2>
+                <p>Spoofs HWID To Avoid Game Bans</p>
+                <a href="https://github.com/infernopluh/InfernoHWIDSpoofer" target="_blank">View Repository</a>
+            </div>
+            <div class="repo-card">
+                <h2>File Logger</h2>
+                <p>File Logger Out Of GTAG Plugins Folder. (DM ON DISCORD TO GET ACCESS)</p>
+                <a href="https://github.com/infernopluh/FileLogger" target="_blank">View Repository</a>
+            </div>
         </section>
     </main>
     <footer>
         <p>Powered by GitHub Pages</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
