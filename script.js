@@ -1,4 +1,4 @@
-const username = "infernogpt"; // Replace with your GitHub username
+const username = "infernopluh"; // Replace with your GitHub username
 const repoListElement = document.getElementById("repo-list");
 
 async function fetchRepos() {
