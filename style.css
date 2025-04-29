@@ -1,0 +1,78 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #ff4500, #ff6347);
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styling */
+header {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Repository list styling */
+#repo-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.repo-card {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.repo-card:hover {
+    transform: scale(1.05);
+}
+
+.repo-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.repo-card p {
+    margin-bottom: 10px;
+}
+
+.repo-card a {
+    color: #ffdab9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.repo-card a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+    margin-top: auto;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.2);
+}
