@@ -18,13 +18,57 @@
         /* Body styling */
         body {
             font-family: 'Bangers', cursive;
-            background: linear-gradient(120deg, #ff4500, #ff6347);
+            background: linear-gradient(120deg, #6a0dad, #000000);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
             color: #fff;
             text-align: center;
             line-height: 1.6;
             min-height: 100vh;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
+        }
+
+        /* Gradient animation */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating debris effect */
+        .debris {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: float 6s linear infinite;
+            opacity: 0.7;
+        }
+
+        .debris:nth-child(odd) {
+            animation-duration: 8s;
+        }
+        .debris:nth-child(even) {
+            animation-duration: 10s;
+        }
+
+        /* Floating debris animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-40vh) translateX(20vw);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-80vh) translateX(-10vw);
+                opacity: 0.3;
+            }
         }
 
         /* Header styling */
@@ -81,6 +125,39 @@
             text-decoration: underline;
         }
 
+        /* About Me Section Styling */
+        #about-me {
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            margin: 20px;
+        }
+
+        #about-me h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 600px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .about-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .about-box p {
+            font-size: 1.2rem;
+        }
+
         /* Footer styling */
         footer {
             margin-top: auto;
@@ -90,9 +167,37 @@
     </style>
 </head>
 <body>
+    <!-- Floating Debris -->
+    <div class="debris" style="top: 10%; left: 20%;"></div>
+    <div class="debris" style="top: 30%; left: 40%;"></div>
+    <div class="debris" style="top: 50%; left: 60%;"></div>
+    <div class="debris" style="top: 70%; left: 30%;"></div>
+    <div class="debris" style="top: 90%; left: 50%;"></div>
+    <div class="debris" style="top: 20%; left: 80%;"></div>
+    <div class="debris" style="top: 40%; left: 10%;"></div>
+    <div class="debris" style="top: 60%; left: 90%;"></div>
+
     <header>
         <h1>My GitHub Repos and Software</h1>
     </header>
+
+    <!-- About Me Section -->
+    <section id="about-me">
+        <h2>About Me</h2>
+        <div class="about-box">
+            <h3>Who Am I?</h3>
+            <p>I'm a passionate developer who loves creating unique software solutions. From game tools to system utilities, I enjoy tackling challenging problems with creative code.</p>
+        </div>
+        <div class="about-box">
+            <h3>What Do I Do?</h3>
+            <p>My work primarily focuses on improving user experiences with innovative tools. I specialize in creating software that is both functional and easy to use.</p>
+        </div>
+        <div class="about-box">
+            <h3>My Interests</h3>
+            <p>I enjoy experimenting with new technologies, gaming, and collaborating with like-minded developers to build extraordinary projects.</p>
+        </div>
+    </section>
+
     <main>
         <section id="repo-list">
             <!-- Manually add your repositories here -->
@@ -108,7 +213,7 @@
             </div>
             <div class="repo-card">
                 <h2>File Logger</h2>
-                <p>File Logger that takes files Out Of GTAG Plugins Folder. (DM ON DISCORD TO GET ACCESS)</p>
+                <p>File Logger Out Of GTAG Plugins Folder. (DM ON DISCORD TO GET ACCESS)</p>
                 <a href="https://github.com/infernopluh/FileLogger" target="_blank">View Repository</a>
             </div>
         </section>
