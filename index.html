@@ -3,222 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>infernopluh</title>
+    <title>Modding Community Hub</title>
     <style>
-        /* General reset */
-        * {
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #1e0035; /* Dark purple background */
+            color: #ffffff;
+            overflow-x: hidden; /* Prevent horizontal scroll from debris */
         }
-
-        /* Importing a highly cartoony font from Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-
-        /* Body styling */
-        body {
-            font-family: 'Bangers', cursive;
-            background: linear-gradient(120deg, #6a0dad, #000000);
-            background-size: 400% 400%;
-            animation: gradientAnimation 10s ease infinite;
+        header {
+            background-color: #3b006a; /* Slightly lighter purple */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        nav {
+            background-color: #4a007f;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-shadow: 0 0 10px #ff00ff; /* Neon glow effect */
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(58, 0, 91, 0.8); /* Semi-transparent dark purple */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+        footer {
+            background-color: #3b006a;
             color: #fff;
             text-align: center;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Gradient animation */
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Floating debris effect */
-        .debris {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            animation: float 6s linear infinite;
-            opacity: 0.7;
-        }
-
-        .debris:nth-child(odd) {
-            animation-duration: 8s;
-        }
-        .debris:nth-child(even) {
-            animation-duration: 10s;
-        }
-
-        /* Floating debris animation */
-        @keyframes float {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 0.7;
-            }
-            50% {
-                transform: translateY(-40vh) translateX(20vw);
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(-80vh) translateX(-10vw);
-                opacity: 0.3;
-            }
-        }
-
-        /* Header styling */
-        header {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 20px 0;
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Repository list styling */
-        #repo-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .repo-card {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            padding: 20px;
-            width: 300px;
-            text-align: left;
-            transition: transform 0.3s ease;
-        }
-
-        .repo-card:hover {
-            transform: scale(1.05);
-        }
-
-        .repo-card h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .repo-card p {
-            margin-bottom: 10px;
-        }
-
-        .repo-card a {
-            color: #ffdab9;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .repo-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* About Me Section Styling */
-        #about-me {
-            padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 12px;
-            margin: 20px;
-        }
-
-        #about-me h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .about-box {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 10px auto;
-            max-width: 600px;
-            text-align: left;
-            color: #fff;
-        }
-
-        .about-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .about-box p {
-            font-size: 1.2rem;
-        }
-
-        /* Footer styling */
-        footer {
-            margin-top: auto;
             padding: 10px 0;
-            background: rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+        h2 {
+            color: #ff00ff; /* Bright neon purple for headings */
+            border-bottom: 2px solid #ff00ff;
+            padding-bottom: 5px;
+        }
+        a {
+            color: #ff00ff;
+        }
+        a:hover {
+            text-shadow: 0 0 10px #ff00ff;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6200ea; /* Vibrant purple */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background-color: #8e24aa; /* Slightly lighter purple on hover */
+        }
+        .section {
+            margin-bottom: 50px;
+        }
+        .subsection {
+            margin-top: 20px;
+            padding-left: 20px;
         }
     </style>
 </head>
 <body>
-    <!-- Floating Debris -->
-    <div class="debris" style="top: 10%; left: 20%;"></div>
-    <div class="debris" style="top: 30%; left: 40%;"></div>
-    <div class="debris" style="top: 50%; left: 60%;"></div>
-    <div class="debris" style="top: 70%; left: 30%;"></div>
-    <div class="debris" style="top: 90%; left: 50%;"></div>
-    <div class="debris" style="top: 20%; left: 80%;"></div>
-    <div class="debris" style="top: 40%; left: 10%;"></div>
-    <div class="debris" style="top: 60%; left: 90%;"></div>
-
     <header>
-        <h1>My GitHub Repos and Software</h1>
+        <h1>Modding Community Hub</h1>
+        <p>Your go-to destination for modding resources, tutorials, and tools!</p>
     </header>
-
-    <!-- About Me Section -->
-    <section id="about-me">
-        <h2>About Me</h2>
-        <div class="about-box">
-            <h3>Who Am I?</h3>
-            <p>I'm a passionate developer who loves creating unique software solutions. From game tools to system utilities, I enjoy tackling challenging problems with creative code.</p>
-        </div>
-        <div class="about-box">
-            <h3>What Do I Do?</h3>
-            <p>My work primarily focuses on improving user experiences with innovative tools. I specialize in creating software that is both functional and easy to use.</p>
-        </div>
-        <div class="about-box">
-            <h3>My Interests</h3>
-            <p>I enjoy experimenting with new technologies, gaming, and collaborating with like-minded developers to build extraordinary projects.</p>
-        </div>
-    </section>
-
+    <nav>
+        <a href="#tutorials">Tutorials</a>
+        <a href="#tools">Tools</a>
+        <a href="#showcase">Showcase</a>
+        <a href="#community">Community</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+    </nav>
     <main>
-        <section id="repo-list">
-            <!-- Manually add your repositories here -->
-            <div class="repo-card">
-                <h2>Cheat Installer</h2>
-                <p>Gtag Cheat Installer</p>
-                <a href="https://github.com/infernopluh/GorillaCheatManager" target="_blank">View Repository</a>
+        <!-- Tutorials Section -->
+        <div class="section" id="tutorials">
+            <h2>Modding Tutorials</h2>
+            <p>Learn how to create your own mods with our step-by-step tutorials. Whether you're a beginner or an experienced modder, we have resources for you!</p>
+            <div class="subsection">
+                <h3>Beginner Tutorials</h3>
+                <ul>
+                    <li><a href="tutorials/beginner.html">Getting Started with Modding</a></li>
+                    <li><a href="tutorials/environment-setup.html">Setting Up Your Environment</a></li>
+                    <li><a href="tutorials/first-mod.html">Creating Your First Mod</a></li>
+                </ul>
             </div>
-            <div class="repo-card">
-                <h2>HWID Spoofer</h2>
-                <p>Spoofs HWID To Avoid Game Bans</p>
-                <a href="https://github.com/infernopluh/InfernoHWIDSpoofer" target="_blank">View Repository</a>
+            <div class="subsection">
+                <h3>Advanced Tutorials</h3>
+                <ul>
+                    <li><a href="tutorials/advanced-scripting.html">Advanced Scripting Techniques</a></li>
+                    <li><a href="tutorials/custom-assets.html">Adding Custom Assets</a></li>
+                    <li><a href="tutorials/multiplayer-mods.html">Building Multiplayer-Compatible Mods</a></li>
+                </ul>
             </div>
-            <div class="repo-card">
-                <h2>File Logger</h2>
-                <p>File Logger For GTAG Plugins Folder. (DM ON DISCORD TO GET ACCESS)</p>
-                <a href="https://github.com/infernopluh/FileLogger" target="_blank">View Repository</a>
+        </div>
+
+        <!-- Tools Section -->
+        <div class="section" id="tools">
+            <h2>Tools and Resources</h2>
+            <p>Explore tools and resources that make modding easier and more efficient.</p>
+            <div class="subsection">
+                <h3>Popular Tools</h3>
+                <ul>
+                    <li><a href="https://bepinex.github.io/">BepInEx Framework</a></li>
+                    <li><a href="https://unity.com/">Unity Engine</a></li>
+                    <li><a href="https://github.com/">GitHub Repositories</a></li>
+                </ul>
             </div>
-        </section>
+            <div class="subsection">
+                <h3>Recommended Plugins</h3>
+                <ul>
+                    <li><a href="plugins/plugin1.html">Plugin 1: Debugging Helper</a></li>
+                    <li><a href="plugins/plugin2.html">Plugin 2: Asset Manager</a></li>
+                    <li><a href="plugins/plugin3.html">Plugin 3: Multiplayer Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Showcase Section -->
+        <div class="section" id="showcase">
+            <h2>Community Showcase</h2>
+            <p>Check out some of the amazing mods created by our community members!</p>
+            <div class="subsection">
+                <h3>Featured Mods</h3>
+                <ul>
+                    <li><a href="showcase/mod1.html">Mod 1: Super Speed</a></li>
+                    <li><a href="showcase/mod2.html">Mod 2: Infinite Jump</a></li>
+                    <li><a href="showcase/mod3.html">Mod 3: Custom Skins</a></li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Upcoming Mods</h3>
+                <ul>
+                    <li>Mod 4: Map Customizer (Coming Soon)</li>
+                    <li>Mod 5: Advanced Physics (Coming Soon)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Community Section -->
+        <div class="section" id="community">
+            <h2>Community</h2>
+            <p>Join our vibrant modding community to collaborate, share ideas, and get help.</p>
+            <div class="subsection">
+                <h3>Community Events</h3>
+                <ul>
+                    <li>Monthly Modding Jam</li>
+                    <li>Live Q&A with Experienced Modders</li>
+                    <li>Showcase Streams</li>
+                </ul>
+            </div>
+            <div class="subsection">
+                <h3>Forums and Discussions</h3>
+                <p>Participate in discussions and share your thoughts on our <a href="forums.html">forums</a>.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="subsection">
+                <h3>How do I get started?</h3>
+                <p>Check out our <a href="#tutorials">Beginner Tutorials</a> section to learn the basics of modding.</p>
+            </div>
+            <div class="subsection">
+                <h3>What tools do I need?</h3>
+                <p>We recommend starting with the <a href="#tools">BepInEx Framework</a> and Unity Engine.</p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section" id="contact">
+            <h2>Contact and Support</h2>
+            <p>If you have questions or need support, feel free to reach out to us!</p>
+            <a class="button" href="mailto:support@moddinghub.com">Contact Us</a>
+        </div>
     </main>
     <footer>
-        <p>Powered by GitHub Pages</p>
+        <p>&copy; 2025 Modding Community Hub | All rights reserved.</p>
     </footer>
 </body>
 </html>
